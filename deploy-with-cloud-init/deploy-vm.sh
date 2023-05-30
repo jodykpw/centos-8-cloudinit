@@ -23,7 +23,7 @@ qm set $VMID --memory $MEMORY
 # Create a secondary disk for /home directory
 qm set $VMID --scsi1 $STORAGE:$SECONDARY_DISKSIZE
 
-The file needs to be located in a folder that is referred to by "local" storage. 
+# The file needs to be located in a folder that is referred to by "local" storage. 
 # It needs to be in a specific directory structure as shown here:
 # https://pve.proxmox.com/wiki/Storage:_Directory
 # i.e /var/lib/vz/snippets/
