@@ -1,0 +1,26 @@
+#cloud-config
+hostname: devbox-1
+manage_etc_hosts: true
+fqdn: devbox-1.jodywan.com
+timezone: Europe/London
+users:
+  - name: jody
+    ssh-authorized-keys:
+      - ssh-rsa xxxxxx root@pve1
+      - ssh-rsa xxxxxx jodywan@Jody-MacBook-Pro.local
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    groups: sudo
+    shell: /bin/bash
+package_upgrade: true
+packages:
+  - nano
+  - vim
+  - git
+  - ansible-core
+runcmd:
+  - 'ansible-galaxy collection install community.general'
+  - 'ansible-galaxy collection install ansible.posix'
+  - 'git clone --recursive https://github.com/jodykpw/centos8-cloudinit-devbox-playbook.git /root/centos8-cloudinit-devbox-playbook'
+  - 'cd /root/centos8-cloudinit-devbox-playbook'
+  - 'ansible-playbook init-localhost-server.yml -i dev.ini'
+  - 'ansible-playbook migrate-home-directory.yml -i dev.ini'
