@@ -8,7 +8,7 @@ This repository contains an automation script and templates for deploying CentOS
 2. `wget` this repository.
 3. Go to the cloned folder.
 
-### Preparingn Cloud Init Template
+### Preparing Cloud-Init Templates
 
 1. Go to preparing-cloud-init-template folder.
 2. Modify the `preparing-cloud-init-template` environment variables in the .env file according to your requirements.
