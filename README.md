@@ -14,6 +14,7 @@ This repository contains an automation script and templates for deploying CentOS
 2. Modify the `preparing-cloud-init-template` environment variables in the .env file according to your requirements.
 
 ```console
+chmod +x create-template.sh
 ./create-template.sh
 ```
 
@@ -24,6 +25,7 @@ This repository contains an automation script and templates for deploying CentOS
 3. Modify the `vm-cloud-init.yaml` file according to your requirements.
 
 ```console
+chmod +x deploy-vm.sh
 ./deploy-vm.sh
 ```
 
