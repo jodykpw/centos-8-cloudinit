@@ -5,7 +5,7 @@ This repository contains an automation script and templates for deploying CentOS
 ## 🚀 Deployment Steps
 
 1. First login to your Proxmox VE host terminal:
-2. `wget` this repository.
+2. `git` this repository.
 3. Go to the cloned folder.
 
 ### Preparing Cloud-Init Templates
