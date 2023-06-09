@@ -29,6 +29,17 @@ chmod +x deploy-vm.sh
 ./deploy-vm.sh
 ```
 
+### Cloning Template VMs for Scalable Deployment
+
+1. Go to cloning-template folder.
+2. Modify the `cloning-template` clone.sh file according to your requirements.
+2. Modify the `cloning-template` environment variables in the .env file according to your requirements.
+
+```console
+chmod +x clone.sh
+./clone.sh
+```
+
 ## 🔨🔧 Customization
 Feel free to modify the deployment script and Cloud-Init template to suit your specific requirements. You can add additional configurations, modify network settings, or adjust any other parameters as needed.
 
