@@ -17,7 +17,13 @@ qm set $VMID --ostype $OSTYPE
 qm importdisk $VMID $IMAGE_FILE $STORAGE
 
 # Attaching the import disk it to a SCSI drive
-qm set $VMID --scsihw $SCSIHW --scsi0 $STORAGE:vm-$VMID-disk-0
+if [ "$STORAGETYPE" = "nfs" ]; then
+   # For file-based storages
+qm set $VMID --scsihw $SCSIHW --scsi0 $STORAGE:$VMID/vm-$VMID-disk-0.raw
+else
+   # For local storage
+   qm set $VMID --scsihw $SCSIHW --scsi0 $STORAGE:vm-$VMID-disk-0
+fi
 
 # Specify guest boot order.
 qm set $VMID --boot order='scsi0'
