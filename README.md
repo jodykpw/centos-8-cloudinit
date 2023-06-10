@@ -31,6 +31,10 @@ chmod +x deploy-vm.sh
 
 ### Cloning Template VMs for Scalable Deployment
 
+To deploy a virtual machine (VM) across multiple nodes using Terraform with the Proxmox provider where each node requires its own VM template.  To clone a Proxmox template across multiple nodes, you can use a Bash script "cloning-template".  
+
+It is important to note that this process requires shared storage, the template's disks must be stored on the shared storage to ensure proper functionality and access across the multiple nodes.
+
 1. Go to cloning-template folder.
 2. Modify the `cloning-template` clone.sh file according to your requirements.
 2. Modify the `cloning-template` environment variables in the .env file according to your requirements.
