@@ -18,7 +18,7 @@ chmod +x create-template.sh
 ./create-template.sh
 ```
 
-### Deploy with Cloud Init
+### Deploy DevBox with Cloud Init 
 
 1. Go to deploy-with-cloud-init folder.
 2. Modify the `deploy-with-cloud-init` environment variables in the .env file according to your requirements.
