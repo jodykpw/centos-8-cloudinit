@@ -29,4 +29,4 @@ runcmd:
   - 'cd /root/migrate-home-dir-cloud-init-playbook'
   - 'ansible-playbook migrate-home-directory.yml -i hosts.ini'
   - 'git clone --recursive https://github.com/jodykpw/centos8-cloudinit-playbook.git /root/centos8-cloudinit-playbook'
-  - 'ansible-playbook init-localhost-server.yml -i dev.ini'
+  - 'ansible-playbook init-localhost-server.yml -i hosts.ini'
