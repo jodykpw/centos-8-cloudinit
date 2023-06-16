@@ -29,8 +29,8 @@ qm set $VMID --scsi1 $STORAGE:$SECONDARY_DISKSIZE
 # i.e /var/lib/vz/snippets/
 mkdir -p /var/lib/vz/snippets
 
-cp vm-cloud-init.yaml /var/lib/vz/snippets/vm$VMID-cloud-init.yaml
-qm set $VMID --cicustom user=local:snippets/vm$VMID-cloud-init.yaml
+cp vm-cloud-init.yaml /var/lib/vz/snippets/vm-$VMID-cloud-init.yaml
+qm set $VMID --cicustom user=local:snippets/vm-$VMID-cloud-init.yaml
 
 # One way to check if the file is run is to start terminal immediately after VM start
 qm start $VMID && qm terminal $VMID
