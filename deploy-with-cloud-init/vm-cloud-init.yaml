@@ -4,7 +4,7 @@ manage_etc_hosts: true
 fqdn: devbox-1.jodywan.com
 timezone: Europe/London
 users:
-  - name: jody
+  - name: centos
     ssh-authorized-keys:
       - ssh-rsa xxxxxx root@pve1
       - ssh-rsa xxxxxx jodywan@Jody-MacBook-Pro.local
@@ -15,18 +15,10 @@ chpasswd:
   ## Forcing user to change the default password at first login
   expire: true
   list: |
-    jody:password
+    centos:password
 package_upgrade: true
 packages:
   - nano
   - vim
   - git
   - ansible-core
-runcmd:
-  - 'ansible-galaxy collection install community.general'
-  - 'ansible-galaxy collection install ansible.posix'
-  - 'git clone https://github.com/jodykpw/migrate-home-dir-cloud-init-playbook.git /root/migrate-home-dir-cloud-init-playbook'
-  - 'cd /root/migrate-home-dir-cloud-init-playbook'
-  - 'ansible-playbook migrate-home-directory.yml -i hosts.ini'
-  - 'git clone --recursive https://github.com/jodykpw/centos8-cloudinit-playbook.git /root/centos8-cloudinit-playbook'
-  - 'ansible-playbook init-localhost-server.yml -i hosts.ini'
